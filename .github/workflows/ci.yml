@@ -1,0 +1,5 @@
+name: learn-github-actions
+on: [push]
+jobs:
+  ci-server:
+    uses: devpos23/reuse-github-actions/.github/workflows/ci.yml@main
