@@ -18,8 +18,8 @@
     dest: /opt
     owner: sonarqube
     group: sonarqube
-  become_user: sonarqube
     remote_src: yes
+  become_user: sonarqube
 
 
 
