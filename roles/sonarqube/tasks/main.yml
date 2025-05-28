@@ -20,6 +20,8 @@
     src: https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-10.5.1.90531.zip
     dest: /opt
     remote_src: yes
+    owner: sonar2
+    group: sonar2
   become_user: sonar2
 
 
