@@ -1,0 +1,25 @@
+- name: create new user
+  ansible.builtin.user:
+    name: sonarqube
+
+- name: Install java 17 version
+  ansible.builtin.dnf:
+    name: java-17-openjdk
+    state: installed
+
+- name: make a directory
+  ansible.builtin.file:
+    path: /opt
+    state: directory
+
+- name: Download sonarqube
+  ansible.builtin.unarchive:
+    src: https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-10.5.1.90531.zip
+    dest: /opt
+    remote_src: yes
+
+
+
+
+
+
