@@ -1,16 +1,27 @@
 - name: make a directory
   ansible.builtin.file:
-    path: /home/ec2-user
+    path: /opt
     state: directory
 
 - name: Download sonar-scanner
   ansible.builtin.unarchive:
     src: https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-7.1.0.4889-linux-x64.zip?_gl=1*w374vd*_gcl_au*MTQ0NzA4ODc2MS4xNzQ4MzMyNDU3*_ga*MTAyOTA5MTgwLjE3MTc1OTUzMzA.*_ga_9JZ0GZ5TC6*czE3NDgzMzI0NTYkbzgkZzEkdDE3NDgzMzM3MzckajUzJGwwJGgwJGQzc1Z5UjRsN2tuNjEtNkRVdlEyYS1ZR0xVQ000aW9VUEZR
-    dest: /home/ec2-user
+    dest: /opt
     remote_src: yes
-    owner: ec2-user
-    group: ec2-user
-  become_user: ec2-user
+
+- name: make a directory runner
+  ansible.builtin.file:
+    path: /home/github-runner
+    state: directory
+
+- name: Download Github runner
+  ansible.builtin.unarchive:
+    src: curl -o actions-runner-linux-x64-2.324.0.tar.gz -L https://github.com/actions/runner/releases/download/v2.324.0/actions-runner-linux-x64-2.324.0.tar.gz
+    dest: /home/github-runner
+    remote_src: yes
+
+
+
 
 
 
