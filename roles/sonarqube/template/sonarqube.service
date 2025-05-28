@@ -1,0 +1,11 @@
+[Unit]
+Description=Sonarqube
+
+[Service]
+User=sonarqube
+Type=forking
+ExecStart=/opt/sonarqube-10.5.1.90531/bin/linux-x86-64/.sonar.sh
+Restart=always
+
+[Install]
+WantedBy=default.target
