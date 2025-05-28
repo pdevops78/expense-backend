@@ -20,6 +20,9 @@
     dest: /home/github-runner
     remote_src: yes
 
+- name: create a runner
+  ansible.builtin.shell: ./config.sh --url https://github.com/pdevops78 --token ${git_token}
+
 
 
 
