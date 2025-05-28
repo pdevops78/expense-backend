@@ -21,6 +21,13 @@
     remote_src: yes
   become_user: sonarqube
 
+- name: sopy sonarqube service
+  ansible.builtin.systemd_service:
+    name: sonarqube
+    state: started
+    enabled: yes
+    daemon_reload: yes
+
 
 
 
