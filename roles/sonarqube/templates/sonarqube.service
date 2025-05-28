@@ -2,10 +2,9 @@
 Description=Sonarqube
 
 [Service]
-User=sonarqube
+User=sonar2
 Type=forking
-ExecStart=/opt/sonarqube-10.5.1.90531/bin/linux-x86-64/.sonar.sh
-Restart=always
-
+ExecStart=/opt/sonarqube-10.5.1.90531/bin/linux-x86-64/.sonar.sh start
+SystemlogIdentifier=sonarqube
 [Install]
 WantedBy=default.target
