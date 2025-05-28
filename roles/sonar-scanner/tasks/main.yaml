@@ -13,17 +13,24 @@
   ansible.builtin.file:
     path: /home/github-runner
     state: directory
+  become_user: ec2-user
 
 - name: Download Github runner
   ansible.builtin.unarchive:
     src:  https://github.com/actions/runner/releases/download/v2.324.0/actions-runner-linux-x64-2.324.0.tar.gz
     dest: /home/github-runner
     remote_src: yes
+  become_user: ec2-user
+
+- name: install dependencies
+  ansible.builtin.shell: ./bin/installdependencies.sh
+  become_user: ec2-user
 
 - name: create a runner
   ansible.builtin.shell: ./config.sh --url https://github.com/pdevops78 --token ${git_token}
   args:
     chdir: /home/github-runner
+  become_user: ec2-user
 
 
 
