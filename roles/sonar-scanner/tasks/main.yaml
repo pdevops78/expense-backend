@@ -22,6 +22,8 @@
 
 - name: create a runner
   ansible.builtin.shell: ./config.sh --url https://github.com/pdevops78 --token ${git_token}
+  args:
+    chdir: /home/github-runner
 
 
 
