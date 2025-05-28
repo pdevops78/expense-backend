@@ -13,13 +13,14 @@
     state: directory
     owner: sonar2
     group: sonar2
-  become_user: sonar2
+
 
 - name: Download sonarqube
   ansible.builtin.unarchive:
     src: https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-10.5.1.90531.zip
     dest: /opt
     remote_src: yes
+  become_user: sonar2
 
 
 - name: copy sonarqube service
