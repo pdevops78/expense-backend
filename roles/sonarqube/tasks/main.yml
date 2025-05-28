@@ -11,13 +11,13 @@
   ansible.builtin.file:
     path: /opt
     state: directory
+    owner: sonarqube
+    group: sonarqube
 
 - name: Download sonarqube
   ansible.builtin.unarchive:
     src: https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-10.5.1.90531.zip
     dest: /opt
-    owner: sonarqube
-    group: sonarqube
     remote_src: yes
   become_user: sonarqube
 
