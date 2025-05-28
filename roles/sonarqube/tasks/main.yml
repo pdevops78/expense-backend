@@ -11,17 +11,16 @@
   ansible.builtin.file:
     path: /opt
     state: directory
+
+- name: Download sonarqube
+  ansible.builtin.unarchive:
+    src: https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-10.5.1.90531.zip
+    dest: /opt
     owner: sonarq
     group: sonarq
+    remote_src: yes
+  become_user: sonarq
 
-
-#- name: Download sonarqube
-#  ansible.builtin.unarchive:
-#    src: https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-10.5.1.90531.zip
-#    dest: /opt
-#    remote_src: yes
-#  become_user: sonarq
-#
 #
 #- name: copy sonarqube service
 #  ansible.builtin.template:
