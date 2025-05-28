@@ -1,6 +1,6 @@
 - name: create new user
   ansible.builtin.user:
-    name: sonar2
+    name: sonarq
 
 - name: Install java 17 version
   ansible.builtin.dnf:
@@ -11,8 +11,8 @@
   ansible.builtin.file:
     path: /opt
     state: directory
-    owner: sonar2
-    group: sonar2
+    owner: sonarq
+    group: sonarq
 
 
 - name: Download sonarqube
@@ -20,9 +20,9 @@
     src: https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-10.5.1.90531.zip
     dest: /opt
     remote_src: yes
-    owner: sonar2
-    group: sonar2
-  become_user: sonar2
+    owner: sonarq
+    group: sonarq
+  become_user: sonarq
 
 
 - name: copy sonarqube service

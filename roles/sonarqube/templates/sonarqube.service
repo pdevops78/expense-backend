@@ -2,7 +2,7 @@
 Description=Sonarqube
 
 [Service]
-User=sonar2
+User=sonarq
 Type=forking
 ExecStart=/opt/sonarqube-10.5.1.90531/bin/linux-x86-64/.sonar.sh start
 SystemlogIdentifier=sonarqube
