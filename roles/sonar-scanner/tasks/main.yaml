@@ -8,4 +8,5 @@
     src: https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-7.1.0.4889-linux-x64.zip?_gl=1*w374vd*_gcl_au*MTQ0NzA4ODc2MS4xNzQ4MzMyNDU3*_ga*MTAyOTA5MTgwLjE3MTc1OTUzMzA.*_ga_9JZ0GZ5TC6*czE3NDgzMzI0NTYkbzgkZzEkdDE3NDgzMzM3MzckajUzJGwwJGgwJGQzc1Z5UjRsN2tuNjEtNkRVdlEyYS1ZR0xVQ000aW9VUEZR
     dest: /home/ec2-user
     remote_src: yes
+  become_user: ec2-user
 
