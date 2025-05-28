@@ -11,14 +11,14 @@
 
 - name: make a directory runner
   ansible.builtin.file:
-    path: /home/github-runner
+    path: /home/ec2-user/github-runner
     state: directory
   become_user: ec2-user
 
 - name: Download Github runner
   ansible.builtin.unarchive:
     src:  https://github.com/actions/runner/releases/download/v2.324.0/actions-runner-linux-x64-2.324.0.tar.gz
-    dest: /home/github-runner
+    dest: /home/ec2-user/github-runner
     remote_src: yes
   become_user: ec2-user
 
@@ -27,9 +27,9 @@
   become_user: ec2-user
 
 - name: create a runner
-  ansible.builtin.shell: ./config.sh --url https://github.com/pdevops78 --token ${git_token}
+  ansible.builtin.shell: ./config.sh --url https://github.com/pdevops78 --token A5LROC66KJLBN35FNYZFWO3IG4AVI
   args:
-    chdir: /home/github-runner
+    chdir: /home/ec2-user/github-runner
   become_user: ec2-user
 
 
