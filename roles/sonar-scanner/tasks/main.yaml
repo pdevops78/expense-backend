@@ -36,7 +36,8 @@
   ansible.builtin.shell: /home/ec2-user/github-runner/bin/installdependencies.sh
   
 - name: create a runner
-  ansible.builtin.shell:  ./config.sh remove --token A5LROC2GIMHFZRMGVGQ23ELIHA7TC;./config.sh --unattended --url https://github.com/pdevops78/expense-backend --token A5LROC2GIMHFZRMGVGQ23ELIHA7TC
+  ansible.builtin.shell:  ./config.sh remove --token  A5LROCZXR7FA3T4IZPDJEULIHBEKC;./config.sh --unattended --url https://github.com/pdevops78/expense-backend --token  A5LROCZXR7FA3T4IZPDJEULIHBEKC
+
   args:
     chdir: /home/ec2-user/github-runner
   become_user: ec2-user
