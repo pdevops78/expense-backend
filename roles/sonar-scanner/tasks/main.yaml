@@ -24,6 +24,7 @@
 
 - name: install dependencies
   ansible.builtin.shell: ./bin/installdependencies.sh
+  become: root
 
 - name: create a runner
   ansible.builtin.shell: ./config.sh --url https://github.com/pdevops78/expense-backend --token A5LROCZCQ6YTPBYUCUWCEYLIHACYQ
