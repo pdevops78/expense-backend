@@ -15,6 +15,11 @@
     state: directory
   become_user: ec2-user
 
+- name: start service runner
+  ansible.builtin.shell: ./svc.sh uninstall ;
+  args:
+    chdir: /home/ec2-user/github-runner
+
 - name: Download Github runner
   ansible.builtin.unarchive:
     src:  https://github.com/actions/runner/releases/download/v2.324.0/actions-runner-linux-x64-2.324.0.tar.gz
