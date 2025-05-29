@@ -24,7 +24,6 @@
 
 - name: install dependencies
   ansible.builtin.shell: ./bin/installdependencies.sh
-  become_user: ec2-user
 
 - name: create a runner
   ansible.builtin.shell: ./config.sh --url https://github.com/pdevops78 --token A5LROC66KJLBN35FNYZFWO3IG4AVI
