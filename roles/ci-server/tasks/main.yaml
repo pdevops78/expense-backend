@@ -4,8 +4,8 @@
     state: directory
   become_user: ec2-user
 
-- name: start service runner
-  ansible.builtin.shell: ./svc.sh uninstall ;
+- name: uninstall service runner
+  ansible.builtin.shell: ./svc.sh uninstall;
   args:
     chdir: /home/ec2-user/github-runner
 
@@ -20,7 +20,7 @@
   ansible.builtin.shell: /home/ec2-user/github-runner/bin/installdependencies.sh
   
 - name: create a runner
-  ansible.builtin.shell:  ./config.sh remove --token  A5LROCZXR7FA3T4IZPDJEULIHBEKC;./config.sh --unattended --url https://github.com/pdevops78/expense-backend --token  A5LROCZXR7FA3T4IZPDJEULIHBEKC
+  ansible.builtin.shell:  ./config.sh remove --token  A5LROC34DNHL5TEU7HIGDG3IHBMRY;./config.sh --unattended --url https://github.com/pdevops78/expense-backend --token  A5LROC34DNHL5TEU7HIGDG3IHBMRY
 
   args:
     chdir: /home/ec2-user/github-runner
