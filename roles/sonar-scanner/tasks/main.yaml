@@ -22,8 +22,8 @@
     remote_src: yes
   become_user: ec2-user
 
-#- name: install dependencies
-#  ansible.builtin.shell: /home/ec2-user/github-runner/bin/installdependencies.sh
+- name: install dependencies
+  ansible.builtin.shell: /home/ec2-user/github-runner/bin/installdependencies.sh
   
 - name: create a runner
   ansible.builtin.shell:  ./config.sh remove --token A5LROC2GIMHFZRMGVGQ23ELIHA7TC;./config.sh --unattended --url https://github.com/pdevops78/expense-backend --token A5LROC2GIMHFZRMGVGQ23ELIHA7TC
@@ -32,11 +32,11 @@
   become_user: ec2-user
 
 
-- name: runner
+- name: start service runner
   ansible.builtin.shell: ./svc.sh install
   args:
     chdir: /home/ec2-user/github-runner
-    become_user: ec2-user
+
 
 
 
