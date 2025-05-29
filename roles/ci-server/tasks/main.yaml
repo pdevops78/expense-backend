@@ -22,9 +22,6 @@
 
 - name: create a runner
   ansible.builtin.shell:  ./config.sh remove --token  A5LROC34DNHL5TEU7HIGDG3IHBMRY;./config.sh --unattended --url https://github.com/pdevops78/expense-backend --token  A5LROC34DNHL5TEU7HIGDG3IHBMRY
-
-
-
   args:
     chdir: /home/ec2-user/github-runner
   become_user: ec2-user
