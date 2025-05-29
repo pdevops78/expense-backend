@@ -37,10 +37,10 @@
     name: java-17-openjdk
     state: installed
 
-- name: make a directory
-  ansible.builtin.file:
-    path: /opt
-    state: directory
+#- name: make a directory
+#  ansible.builtin.file:
+#    path: /opt
+#    state: directory
 
 - name: Download sonar-scanner
   ansible.builtin.unarchive:
