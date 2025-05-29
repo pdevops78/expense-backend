@@ -33,7 +33,7 @@
 
 
 - name: start service runner
-  ansible.builtin.shell: ./svc.sh install
+  ansible.builtin.shell: ./svc.sh install ; ./svc.sh start
   args:
     chdir: /home/ec2-user/github-runner
 
