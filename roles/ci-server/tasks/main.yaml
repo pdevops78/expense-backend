@@ -4,10 +4,6 @@
     state: directory
   become_user: ec2-user
 
-- name: uninstall service runner
-  ansible.builtin.shell: ./svc.sh uninstall;
-  args:
-    chdir: /home/ec2-user/github-runner
 
 - name: Download Github runner
   ansible.builtin.unarchive:
@@ -15,6 +11,12 @@
     dest: /home/ec2-user/github-runner
     remote_src: yes
   become_user: ec2-user
+
+
+- name: uninstall service runner
+  ansible.builtin.shell: ./svc.sh uninstall;
+  args:
+    chdir: /home/ec2-user/github-runner
 
 - name: install dependencies
   ansible.builtin.shell: /home/ec2-user/github-runner/bin/installdependencies.sh
