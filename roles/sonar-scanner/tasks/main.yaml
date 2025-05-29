@@ -26,7 +26,7 @@
   ansible.builtin.shell: ./bin/installdependencies.sh
 
 - name: create a runner
-  ansible.builtin.shell: ./config.sh --url https://github.com/pdevops78 --token A5LROC66KJLBN35FNYZFWO3IG4AVI
+  ansible.builtin.shell: ./config.sh --url https://github.com/pdevops78/expense-backend --token A5LROCZCQ6YTPBYUCUWCEYLIHACYQ
   args:
     chdir: /home/ec2-user/github-runner
   become_user: ec2-user
