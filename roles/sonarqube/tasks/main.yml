@@ -10,6 +10,8 @@
 - name: make a directory
   ansible.builtin.file:
     path: /opt
+    owner: sonarq
+    group: sonarq
     state: directory
 
 - name: Download sonarqube
