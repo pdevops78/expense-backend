@@ -20,8 +20,10 @@
   register: svc_file
 
 - name: Debug file existence
-  ansible.builtin.debug:
-    msg: "svc.sh exists: {{ svc_file.stat.exists }}"
+  ansible.builtin.shell:  echo '{{ svc_output.stdout }}' | jq .
+#    //msg: "svc.sh exists: {{ svc_file.stat.exists }}"
+
+
 
 - name: uninstall service runner
   ansible.builtin.shell: ./svc.sh uninstall;
