@@ -15,9 +15,9 @@
   ansible.builtin.shell: /home/ec2-user/github-runner/bin/installdependencies.sh
 
 - name: Get svc.sh file status
-    ansible.builtin.stat:
-      path: /home/ec2-user/github-runner/svc.sh
-    register: svc_file
+  ansible.builtin.stat:
+    path: /home/ec2-user/github-runner/svc.sh
+  register: svc_file
 
 - name: Debug file existence
   ansible.builtin.debug:
