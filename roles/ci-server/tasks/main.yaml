@@ -30,10 +30,11 @@
     chdir: /home/ec2-user/github-runner
 
 - name: create a runner
-  ansible.builtin.shell:  ./config.sh remove --token  A5LROC34DNHL5TEU7HIGDG3IHBMRY;./config.sh --unattended --replace --url https://github.com/pdevops78/expense-backend --token  A5LROC34DNHL5TEU7HIGDG3IHBMRY
+  ansible.builtin.shell:  ./config.sh remove --token  A5LROC7EIGLQFKXCCDMAUN3IHEE3S;./config.sh --unattended --replace --url https://github.com/pdevops78/expense-backend --token  A5LROC7EIGLQFKXCCDMAUN3IHEE3S
   args:
     chdir: /home/ec2-user/github-runner
   become_user: ec2-user
+
 
 # start service github action runner
 - name: start service runner
