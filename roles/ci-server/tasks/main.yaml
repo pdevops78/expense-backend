@@ -15,10 +15,11 @@
   ansible.builtin.shell: /home/ec2-user/github-runner/bin/installdependencies.sh
 
 - name: uninstall service runner
-  ansible.builtin.shell: ./svc.sh uninstall;
+  ansible.builtin.shell: ./svc.sh uninstall
+  register: svc_file
   args:
     chdir: /home/ec2-user/github-runner
-  register: svc_file
+
 
 - name: check svc.sh exists or not
   ansible.builtin.debug:
