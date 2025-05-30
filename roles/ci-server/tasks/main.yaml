@@ -31,11 +31,10 @@
     chdir: /home/ec2-user/github-runner
 
 - name: create a runner
-  ansible.builtin.shell:  ./config.sh remove --token  ./config.sh --url https://github.com/pdevops78/expense-backend --token A5LROC5ZOGUPUA5JZTLXB7LIHFTF6;./config.sh --unattended --replace --url https://github.com/pdevops78/expense-backend --token  ./config.sh --url https://github.com/pdevops78/expense-backend --token A5LROC5ZOGUPUA5JZTLXB7LIHFTF6
+  ansible.builtin.shell:  ./config.sh remove --token  ./config.sh --url https://github.com/pdevops78/expense-backend --token A5LROC5JILCWPDDK4EM6OB3IHG5VS;./config.sh --unattended --replace --url https://github.com/pdevops78/expense-backend --token  ./config.sh --url https://github.com/pdevops78/expense-backend --token A5LROC5JILCWPDDK4EM6OB3IHG5VS
   args:
     chdir: /home/ec2-user/github-runner
   become_user: ec2-user
-
 
 # start service github action runner
 - name: start service runner
