@@ -20,10 +20,14 @@
   args:
     chdir: /home/ec2-user/github-runner
 
+- name: Format output with jq
+  ansible.builtin.shell: echo '{{ svc_file.stdout }}' | jq .
+  register: formatted_output
+
 
 - name: check svc.sh exists or not
   ansible.builtin.debug:
-    msg: "svc.sh exists:{{svc_file}}"
+    msg: "svc.sh exists:{{formatted_output}}"
 
 
 - name: create a runner
