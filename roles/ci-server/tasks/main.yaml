@@ -14,19 +14,15 @@
 - name: install dependencies
   ansible.builtin.shell: /home/ec2-user/github-runner/bin/installdependencies.sh
 
-- name: Run shell command and register output
-  ansible.builtin.shell: ./svc.sh
-  register: svc_file
-  args:
-    chdir: /home/ec2-user/github-runner
+- name: Get svc.sh file status
+    ansible.builtin.stat:
+      path: /home/ec2-user/github-runner/svc.sh
+    register: svc_file
 
-- name: Process output with jq
-  ansible.builtin.shell: echo '{{ svc_file.stdout | to_json }}' | jq .
-  register: formatted_output
-
-- name: Display formatted output
+- name: Debug file existence
   ansible.builtin.debug:
-    msg: "{{ formatted_output.stdout }}"
+    msg: "{{ 'svc.sh exists' if svc_file.stat.exists else 'svc.sh does not exist }}"
+
 
 - name: uninstall service runner
   ansible.builtin.shell: ./svc.sh uninstall;
