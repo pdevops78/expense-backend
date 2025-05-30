@@ -23,10 +23,9 @@
   ansible.builtin.debug:
     msg: "{{ 'svc.sh exists' if svc_file.stat.exists else 'svc.sh does not exist' }}"
 
-
-
 - name: uninstall service runner
   ansible.builtin.shell: ./svc.sh uninstall;
+  ignore_errors: true
   args:
     chdir: /home/ec2-user/github-runner
 
