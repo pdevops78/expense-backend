@@ -26,7 +26,6 @@
 
 - name: uninstall service runner
   ansible.builtin.shell: ./svc.sh uninstall;
-  register: svc_file
   ignore_errors: true
   args:
     chdir: /home/ec2-user/github-runner
