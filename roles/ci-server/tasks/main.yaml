@@ -20,7 +20,7 @@
   register: svc_file
 
 - name: Debug file existence
-  ansible.builtin.shell:  echo '{{ svc_output.stdout }}' | jq .
+  ansible.builtin.shell:  echo '{{ svc_file.stdout }}' | jq .
 #    //msg: "svc.sh exists: {{ svc_file.stat.exists }}"
 
 
