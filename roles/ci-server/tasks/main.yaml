@@ -18,6 +18,12 @@
   ansible.builtin.shell: ./svc.sh uninstall;
   args:
     chdir: /home/ec2-user/github-runner
+  register: svc.sh
+
+- name: check svc.sh exists or not
+  ansible.builtin.debug:
+    msg: "svc.sh exists"
+
 
 - name: create a runner
   ansible.builtin.shell:  ./config.sh remove --token  A5LROC7EIGLQFKXCCDMAUN3IHEE3S;./config.sh --unattended --replace --url https://github.com/pdevops78/expense-backend --token  A5LROC7EIGLQFKXCCDMAUN3IHEE3S
