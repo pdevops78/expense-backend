@@ -9,7 +9,11 @@
     state: installed
 
 
+Download artifactory:
+  https://releases.jfrog.io/artifactory/artifactory-pro-rpms/jfrog-artifactory-pro/jfrog-artifactory-pro-7.104.10.rpm
+Install artifactory:
+  yum install -y jfrog-artifactory-pro-7.104.10.rpm
 
-#  wget https://releases.jfrog.io/artifactory/artifactory-rpms/artifactory-rpms.repo -O jfrog-artifactory-rpms.repo;
-#sudo mv jfrog-artifactory-rpms.repo /etc/yum.repos.d/;
-#sudo yum update && sudo yum install jfrog-artifactory-oss
+  start service:
+    service artifactory start
+
