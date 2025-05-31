@@ -9,4 +9,5 @@ jobs:
       sonar_login: admin
       sonar_password: admin123
       npm_install: true
+    secrets: inherit
 
