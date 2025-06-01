@@ -15,6 +15,7 @@
     dest: /opt
     owner: artifactory
     group: artifactory
+    remote_src: yes
 
 
 - name: copy jfrog service file
