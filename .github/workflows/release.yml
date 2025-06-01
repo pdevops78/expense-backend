@@ -1,13 +1,12 @@
 name: learn-github-actions
-on:
-  push:
+on: [push]
 jobs:
   ci-server:
     uses: pdevops78/github-reuse-actions/.github/workflows/ci.yml@main
     with:
       project_name: expense-backend
-      sonar_login: admin
-      sonar_password: admin123
+      artifactory_username: admin
+      artifactory_password: admin123
       npm_install: true
 
 
