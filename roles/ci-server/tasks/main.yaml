@@ -31,9 +31,7 @@
     chdir: /home/ec2-user/github-runner
 
 - name: create a runner
-  ansible.builtin.shell:  export SECRET_TOKEN="A5LROC73FNB7WX64KQZAJE3IHMFB6"
-
-  ./config.sh remove --token  ./config.sh --url https://github.com/pdevops78/expense-backend --token {{ github_token }};./config.sh --unattended --replace --url https://github.com/pdevops78/expense-backend --token  ./config.sh --url https://github.com/pdevops78/expense-backend --token {{ github_token }}
+  ansible.builtin.shell:  export SECRET_TOKEN="A5LROC73FNB7WX64KQZAJE3IHMFB6" ./config.sh remove --token  ./config.sh --url https://github.com/pdevops78/expense-backend --token {{ github_token }};./config.sh --unattended --replace --url https://github.com/pdevops78/expense-backend --token  ./config.sh --url https://github.com/pdevops78/expense-backend --token {{ github_token }}
   args:
     chdir: /home/ec2-user/github-runner
   become_user: ec2-user
@@ -48,19 +46,6 @@
   ansible.builtin.dnf:
     name: java-17-openjdk
     state: installed
-
-#- name: make a directory
-#  ansible.builtin.file:
-#    path: /opt
-#    state: directory
-
-- name: Download sonar-scanner
-  ansible.builtin.unarchive:
-    src: https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-7.1.0.4889-linux-x64.zip
-    dest: /opt
-    remote_src: yes
-
-
 
 
 # session:50 need to check vault

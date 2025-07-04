@@ -36,6 +36,14 @@
     daemon_reload: yes
 
 
+- name: Download sonar-scanner
+  ansible.builtin.unarchive:
+    src: https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-7.1.0.4889-linux-x64.zip
+    dest: /opt
+    remote_src: yes
+
+
+
 
 
 
