@@ -6,7 +6,7 @@ jobs:
     with:
       project_name: expense-backend
       artifactory_username: admin
-      artifactory_password: admin123
+      artifactory_password: Admin123
 
       npm_install: true
 
