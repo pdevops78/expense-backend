@@ -8,6 +8,5 @@ jobs:
       artifactory_username: admin
       artifactory_password: admin123
       npm_install: true
-      release_archive_files: "*.js package.json schema VERSION"
 
 
