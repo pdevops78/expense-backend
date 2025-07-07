@@ -1,7 +1,18 @@
-name: expense-backend
-on: [workflow_call]
+name: learn-github-actions
+on: [push]
 jobs:
-  ci-server:
-    uses: pdevops78/github-reuse-actions/.github/workflows/called.yml@main
-    with:
-      env: 'dev'
+  ci-server-job:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        name: checkout the code
+      - run: echo OK
+        name: code build
+      - run: echo OK
+        name: code Test
+      - run: echo OK
+        name: code Release
+      - run: echo OK
+        name: code Review
+      - run: ls -ltr
+        name: list all files
