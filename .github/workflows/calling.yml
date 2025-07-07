@@ -1,18 +1,5 @@
 name: learn-github-actions
-on: [push]
+on: [workflow_call]
 jobs:
-  ci-server-job:
-    runs-on: [self-hosted]
-    steps:
-      - uses: actions/checkout@v4
-        name: checkout the code
-      - run: echo OK
-        name: code build
-      - run: echo OK
-        name: code Test
-      - run: echo OK
-        name: code Release
-      - run: echo OK
-        name: code Review
-      - run: ls -ltr
-        name: list all files
+  ci-server:
+    uses: pdevops78/github-reuse-actions/.github/workflows/called.yml@main
