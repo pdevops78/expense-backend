@@ -1,4 +1,4 @@
-name: learn-github-actions
+name: expense-backend
 on: [workflow_call]
 jobs:
   ci-server:
