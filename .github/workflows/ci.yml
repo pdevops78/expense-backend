@@ -5,4 +5,5 @@ jobs:
     uses: pdevops78/github-reuse-actions/.github/workflows/ci-server.yml@main
     with:
       project_name: expense
+      vault_token: ${{ secrets.VAULT_TOKEN }}
     secrets: inherit
