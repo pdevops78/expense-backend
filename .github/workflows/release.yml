@@ -8,5 +8,5 @@ jobs:
     uses: pdevops78/github-reuse-actions/.github/workflows/release.yml@main
     with:
       project_name: expense-backend
-      backend_release_archive: "*.js package.json VERSION schema/"
+      backend_release_archive: "*"
     secrets: inherit
