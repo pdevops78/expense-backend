@@ -1,0 +1,10 @@
+  pipeline {
+    agent none
+    stages {
+       stage('Example1'){
+         steps {
+          echo "Hello World"
+         }
+       }
+    }
+  }
