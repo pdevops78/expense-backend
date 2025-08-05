@@ -1,5 +1,5 @@
 pipeline {
-  agent {node{label 'workstation'}}
+  agent any
   stages {
      stage('Lint Code') {
          when { not { buildingTag() } }
