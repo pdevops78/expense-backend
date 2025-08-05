@@ -1,31 +1,41 @@
 pipeline {
-    agent none
-
-    stages {
-        stage('Lint Code') {
-            steps {
-               echo "Hello World"
-            }
+  agent {node{label 'workstation'}}
+  stages {
+     stage('Lint Code') {
+         when { not { buildingTag() } }
+         steps {
+            echo "OK"
+         }
+     }
+     stage('unit tests') {
+         when { not { buildingTag() } }
+         steps {
+            echo "OK"
+          }
+      }
+     stage('integration test') {
+        when { not { buildingTag() } }
+        steps {
+           echo "OK"
         }
-        stage('Unit test') {
-            steps {
-               echo "Hello World"
-            }
+     }
+     stage('code Review') {
+        when { not { buildingTag() } }
+        steps {
+           echo "OK"
         }
-        stage('Integration test') {
-           steps {
-              echo "OK"
-           }
+     }
+     stage('Build Code') {
+        when { buildingTag() }
+        steps {
+           echo "OK"
         }
-        stage('code Review') {
-           steps {
-              echo "OK"
-           }
+     }
+     stage('Release software') {
+        when { buildingTag() }
+        steps {
+           echo "OK"
         }
-        stage('Release Software') {
-           steps {
-              echo "OK"
-           }
-        }
-    }
+     }
+  }
 }
