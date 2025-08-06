@@ -1,4 +1,18 @@
 node {
+ stage('code checkout') {
+    echo "Code checkout"
+      checkout(
+        [
+          $class: 'GitSCM',
+           branches: [[name: 'refs/heads/${env.BRANCH_NAME}']],
+           userRemoteConfigs: [
+            [
+              url: 'https://github.com/pdevops78/expense-backend.git'
+            ]
+          ]
+        ]
+      )
+  }
   if(env.tag_name ==~ '.*'){
   stage('Build Code') {
        echo "OK"
