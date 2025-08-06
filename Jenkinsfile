@@ -1,5 +1,5 @@
 node {
-  if(env.branch_name =~ '.*'){
+  if(env.TAG_NAME =~ '.*'){
   stage('Build Code') {
        echo "OK"
     }
