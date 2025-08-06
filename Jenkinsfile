@@ -1,11 +1,19 @@
 node {
+  if(env.branch_name =~ '.*'){
+  stage('Build Code') {
+       echo "OK"
+    }
+    stage('Release Software') {
+       echo "OK"
+    }
+  }
+  else {
   stage('LintCode'){
      sh 'env'
      echo "OK"
-
-      }
+  }
   stage('Unit test'){
-     echo "OK"
+       echo "OK"
   }
   stage('Integration test') {
      echo "OK"
@@ -13,11 +21,7 @@ node {
   stage('code review') {
      echo "OK"
   }
-  stage('Build Code') {
-     echo "OK"
   }
-  stage('Release Software') {
-     echo "OK"
-  }
+
 
  }
