@@ -4,7 +4,7 @@ node {
       sh 'env'
       echo "Code checkout"
        checkout([$class: 'GitSCM',
-                  branches: [[name: ${env.branch_name}]],
+                 branches: [[name: "*/${env.branch_name}"]],
                   userRemoteConfigs: [[url: 'https://github.com/pdevops78/expense-backend.git']]
               ])
   }
