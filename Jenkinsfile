@@ -11,6 +11,10 @@ node {
    stage('code review') {
         echo "OK"
      }
+   stage('LintCode'){
+         sh 'env'
+         echo "OK"
+      }
    }
   if(env.branch_name != 'main'){
    stage('Unit test'){
@@ -20,13 +24,5 @@ node {
        echo "OK"
     }
   }
- else {
-  stage('LintCode'){
-      sh 'env'
-      echo "OK"
-   }
-
-  }
-
 
  }
