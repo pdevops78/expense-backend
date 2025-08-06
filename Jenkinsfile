@@ -12,15 +12,20 @@ node {
      sh 'env'
      echo "OK"
   }
-  stage('Unit test'){
+  if(env.branch_name != 'main'){
+   stage('Unit test'){
+         echo "OK"
+    }
+    stage('Integration test') {
        echo "OK"
+    }
   }
-  stage('Integration test') {
-     echo "OK"
-  }
-  stage('code review') {
-     echo "OK"
-  }
+ else {
+ stage('code review') {
+      echo "OK"
+   }
+ }
+
   }
 
 
