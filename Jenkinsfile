@@ -6,7 +6,7 @@ node {
       checkout(
         [
           $class: 'GitSCM',
-           branches: [[name: 'refs/heads/${env.BRANCH_NAME}']],
+           branches: [[name: '${env.BRANCH_NAME}']],
            userRemoteConfigs: [
             [
               url: 'https://github.com/pdevops78/expense-backend.git'
