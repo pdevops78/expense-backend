@@ -1,5 +1,6 @@
 pipeline {
-  agent {node{label 'ci-server'}}
+     agent none
+//  agent {node{label 'ci-server'}}
   stages {
      stage('Lint Code') {
          when { not { buildingTag() } }
