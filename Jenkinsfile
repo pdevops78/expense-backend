@@ -1,5 +1,7 @@
 node {
+
   stage('code checkout') {
+      sh 'env'
       echo "Code checkout"
       checkout(
         [
