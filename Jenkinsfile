@@ -1,5 +1,5 @@
 node {
-  if(env.TAG_NAME =~ '.*'){
+  if(env.tag_name ==~ '.*'){
   stage('Build Code') {
        echo "OK"
     }
