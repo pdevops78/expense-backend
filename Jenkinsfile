@@ -3,7 +3,7 @@ node {
   stage('code checkout') {
       sh 'env'
       echo "Code checkout"
-      if(${env.tag_name} ==~ '.*'}){
+      if(${env.tag_name} ==~ '.*'){
        checkout([$class: 'GitSCM',
                  branches: [[name: "refs/tags/${env.tag_name}"]],
                   userRemoteConfigs: [[url: 'https://github.com/pdevops78/expense-backend.git']]
