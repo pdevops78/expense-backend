@@ -3,17 +3,10 @@ node {
   stage('code checkout') {
       sh 'env'
       echo "Code checkout"
-      checkout(
-        [
-          $class: 'GitSCM',
-           branches: [[name: '${env.BRANCH_NAME}']],
-           userRemoteConfigs: [
-            [
-              url: 'https://github.com/pdevops78/expense-backend.git'
-            ]
-          ]
-        ]
-      )
+       checkout([$class: 'GitSCM',
+                  branches: [[name: '${env.BRANCH_NAME}']],
+                  userRemoteConfigs: [[url: 'https://github.com/pdevops78/expense-backend.git']]
+              ])
   }
   if(env.tag_name ==~ '.*'){
   stage('Build Code') {
