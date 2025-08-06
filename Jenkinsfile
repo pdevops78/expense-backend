@@ -3,7 +3,11 @@ pipeline {
  agent {node{label 'ci-server'}}
   stages {
      stage('Lint Code') {
-         when { not { buildingTag() } }
+         when { anyOf
+         {
+          not { buildingTag() } }
+          branch 'main'
+           }
          steps {
             echo "OK"
          }
@@ -21,7 +25,11 @@ pipeline {
         }
      }
      stage('code Review') {
-        when { not { buildingTag() } }
+          when { anyOf
+             {
+              not { buildingTag() } }
+              branch 'main'
+               }
         steps {
            echo "OK"
         }
