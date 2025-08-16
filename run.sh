@@ -1,4 +1,4 @@
-source /data/secrets.txt
+source /tmp/data
 
 if [ -z "${DB_HOST}" ]; then
   echo DB_HOST is missing
