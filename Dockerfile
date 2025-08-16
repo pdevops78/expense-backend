@@ -1,8 +1,8 @@
 FROM                      node
 RUN                       mkdir /app
-COPY                       . /app/
+COPY                      *.js package.json /app/
 WORKDIR                   /app
 RUN                       npm install
-COPY                      run.sh /
-ENTRYPOINT                ["bash","/run.sh"]
+COPY                      run.sh /app/run.sh
+ENTRYPOINT                ["bash","/app/run.sh"]
 
