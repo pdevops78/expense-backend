@@ -1,6 +1,6 @@
 FROM                      node
 RUN                       mkdir /app
-COPY                       *.js package.json /app/
+COPY                       . /app/
 WORKDIR                   /app
 RUN                       npm install
 COPY                      run.sh /
