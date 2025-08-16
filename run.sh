@@ -1,4 +1,6 @@
-source /tmp/data
-cat /tmp/data
-node -r newrelic /app/index.js
+source /tmp/data.txt
+cat /tmp/data.txt
+
+
+node -r  /app/index.js
 
