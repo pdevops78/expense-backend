@@ -17,6 +17,3 @@ if [ -z "$NEW_RELIC_LICENSE_KEY" ]; then
 fi
 
 node -r newrelic /app/index.js
-
-
-
